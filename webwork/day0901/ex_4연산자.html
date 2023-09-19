@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Moirai+One&display=swap" rel="stylesheet">
+    <style>
+        body *{
+            font-size: 40px;
+            font-family: 'Dongle';
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let su1=prompt("숫자 1 입력",10);
+        let su2=prompt("숫자 2 입력",20);
+
+        console.log("su1="+typeof(su1)); //보니까 둘다 스트링임
+        console.log("su2="+typeof(su2));
+
+        
+
+        //let add=parseInt(su1)+parseInt(su2); //정수타입으로 변환 후 계산.
+        let add=Number(su1)+Number(su2); //넘버 쓰면 실수값 유지하면서 숫자로 계산가능
+        let sub=su1-su2;
+        let mul=su1*su2;
+        let div=su1/su2;
+
+        let s=`<b>add=${add}<br>sub=${sub}<br>mul=${mul}<br>div=${div}<br>`;
+
+        document.write(s);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--
+        start와 end값을 입력받아 해당 구구단을 출력하시오
+        방향은 가로 방향으로
+
+        단 start가 end보다 클 경우 둘을 바꿔라
+    -->
+    <script>
+        let start =prompt('시작할 단을 입력하시오');
+        let end =prompt('끝나는 단을 입력하시오');
+
+        if(Number(start)>Number(end)){ //연산할땐 꼭 숫자형으로 바뀌었나확인
+            let temp = "";
+            temp=start;
+            start=end;
+            end=temp;
+
+        }
+        /* 세로로 주루룩
+        for(let i=start; i<=end; i++){
+            for(let j=1; j<=9; j++){
+                document.write(`<h2>${i}X${j}=${i*j} </h2>`);
+            }
+        }
+        */
+        
+        for(let i=start; i<=end; i++){
+            document.write(`${i}단 &nbsp; &nbsp; &nbsp; `)
+        }
+        
+        for(let i=1; i<=9; i++){
+            document.write(`<br>`)
+            for(let j=start; j<=end; j++){
+                document.write(`${j}X${i}=${i*j}&nbsp;&nbsp;&nbsp;`);
+            }
+        }
+    </script>
+</body>
+</html>

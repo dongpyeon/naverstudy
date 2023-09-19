@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        구구단 숫자 2~9까지 입력을 받아서 해당 구구단을 출력하시오
+        단 2~9 사이의 값이 아닐경우 "이미지(아무거나 출력하기)"
+    -->
+    <script>
+        let num =prompt('숫자를 입력하시오');
+
+        if(num <2 || num >9){
+            document.write(`<h1>2에서 9 사잇값을 좋은말 할때 입력하세요</h1><img src='../연예인사진/parkboyoung.jpg'>`)
+        }
+
+        for(let i=1; i<=9; i++){
+            document.write(`<h2>${num}X${i}=${num*i} </h2>`)
+        }
+    </script>
+</body>
+</html>
