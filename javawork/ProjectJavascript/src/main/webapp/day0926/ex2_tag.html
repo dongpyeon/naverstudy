@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table.two{
+		border:5px groove orange;
+		border-collapse:collapse;
+	}
+	table.two td,table.two tr{
+		border:1px solid green;
+	}
+</style>
+</head>
+<body>
+	<h2>각종 table 만들기</h2>
+	<table border="1" style="width: 300px">
+		<caption><b>[표1[</b></caption>
+		<tr height ="50" bgcolor ="orange"> <!-- tr: 한줄을 의미 -->
+			<td align="right" valign="bottom">번호</td> <!--td : 한칸을 의미 -->
+			<td>이름</td>
+			<td>주소</td>
+			<td rowspan="3">3줄 합쳐버리기 ㅋㅋ</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>이영자</td>
+			<td>서초구</td>
+		</tr>
+		<tr>
+			<td colspan="3">have a Nice Day!!</td>
+		</tr>
+	</table>
+	
+	<hr>
+	<table class="two" >
+		<tr>
+			<td rowspan="4" width="200" align="center">
+				<img alt="사진" src="../image/13.jpg" width="130">
+			</td>
+			<td>
+				이름 : 박신혜
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="cherry">나이 :30세</td>
+		</tr>
+		<tr>
+			<td>폰 번호:010-2333-3434</td>
+		</tr>
+		<tr>
+			<td>주소:역삼동</td>
+		</tr>
+	</table>
+</body>
+</html>

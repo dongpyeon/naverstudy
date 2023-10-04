@@ -1,29 +1,34 @@
---scott ¿¬½À¿ë Å×ÀÌºí·Î Á¶È¸ ¿¬½ÀÇÏ±â
-SELECT * from emp; -- ÀüÃ¼ Å×ÀÌºíÀÇ µ¥ÀÌÅ¸ Á¶È¸
-SELECT * from emp order by ename asc; -- enameÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¶È¸ asc´Â »ı·«°¡´É
-SELECT * from emp order by ename desc; -- ³»¸²Â÷¼øÀÌ¶ó desc
-SELECT empno,ename from emp;
-SELECT job from emp;
---°°Àº Á÷¾÷ÀÏ °æ¿ì ÇÑ¹ø ¾¿¸¸ Ãâ·Â, ¿À¸§Â÷¼ø Á¤·Ä Á¶È¸
-SELECT DISTINCT job from emp order by job
---sal ÀÌ 3000 ÀÌ»óÀÎ °Í¸¸ Á¶È¸
-SELECT * from emp where sal>=3000;
---sal ÀÌ 2Ãµ ÀÌ»óÀÌ¸é¼­ deptno°¡ 20ÀÎ »ç¶÷ Á¶È¸ (and) 
+scott_0919
+--scott ì—°ìŠµìš© í…Œì´ë¸”ë¡œ ì¡°íšŒ ì—°ìŠµí•˜ê¸°
+select * from emp; --ì „ì²´ í…Œì´ë¸”ì˜ ë°ì´íƒ€ ì¡°íšŒ
+select * from emp order by ename asc; --ename ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì¡°íšŒ(ascëŠ” ìƒëµí•´ë„ë¨)
+select * from emp order by ename desc; --ename ì˜ ë‚´ë¦„ì°¨ìˆœìœ¼ë¡œ ì¡°íšŒ(descëŠ” ìƒëµì•ˆë¨)
+select empno,ename from emp; --ì¼ë¶€ ì»¬ëŸ¼ë§Œ ì¡°íšŒ
+select job from emp; --job ì»¬ëŸ¼ë§Œ ì¡°íšŒ
+
+--ê°™ì€ ì§ì—…ì¼ê²½ìš° í•œë²ˆì”©ë§Œ ì¶œë ¥,ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ ì¡°íšŒ
+select DISTINCT job from emp order by 1; -- ì»¬ëŸ¼ì´ í•œê°œì´ë¯€ë¡œ job ëŒ€ì‹  1ì´ë¼ê³  ì¨ë„ëœë‹¤
+
+--sal ì´ 3000 ì´ìƒì¸ê²ƒë§Œ ì¡°íšŒ
+select * from emp where sal>=3000;
+
+--sal ì´ 2ì²œ ì´ìƒì´ë©´ì„œ deptno ê°€ 20ì¸ì‚¬ëŒ ì¡°íšŒ(and) - ename,sal,deptno
 select ename,sal,deptno from emp where sal>=2000 and deptno=20;
 
---SMITHÀÇ µ¥ÀÌÅ¸ Á¶È¸
+--SMITH ì˜ ë°ì´íƒ€ ì¡°íšŒ
 select * from emp where ename='SMITH';
 
---a·Î ½ÃÀÛÇÏ´Â »ç¶÷µé¸¸ Á¶È¸
-select * from emp where ename like 'A%';
+-- Aë¡œ ì‹œì‘í•˜ëŠ” ì‚¬ëŒë“¤ë§Œ ì¡°íšŒ
+select * from emp where ename like 'A%'; -- %:ëª¨ë“ ..ê¸€ìê¸¸ì´ ìƒê´€ì—†ìŒ
 
---µÎ¹øÂ° ±ÛÀÚ°¡ aÀÎ »ç¶÷¸¸ Á¶È¸
-select * from emp where ename like '_A%';
---¼¼¹øÂ° ±ÛÀÚ°¡ aÀÎ »ç¶÷¸¸ Á¶È¸
-select * from emp where ename like '__A%';
+--ë‘ë²ˆì§¸ ê¸€ìê°€ Aì¸ì‚¬ëŒë§Œ ì¡°íšŒ
+select * from emp where ename like '_A%';  -- _ëŠ” ì„ì˜ì˜ í•œê¸€ìë¥¼ ì˜ë¯¸
 
--- s·Î ½ÃÀÛÇÏ°Å³ª J·Î ½ÃÀÛÇÏ´Â ¸ğµç »ç¶÷ Á¶È¸
+--ì„¸ë²ˆì§¸ ê¸€ìê°€ Aì¸ì‚¬ëŒë§Œ ì¡°íšŒ
+select * from emp where ename like '__A%'; -- _ ë‘ë²ˆ
+
+-- S ë¡œ ì‹œì‘í•˜ê±°ë‚˜ J ë¡œ ì‹œì‘í•˜ëŠ” ëª¨ë“  ì‚¬ëŒ ì¡°íšŒ
 select * from emp where ename like 'S%' or ename like 'J%';
 
---sal ÀÌ 2Ãµ ÀÌ»óÀÎ »ç¶÷Áß¿¡ s·Î ½ÃÀÛÇÏ´Â »ç¶÷ Á¶È¸
+-- sal ì´ 2ì²œ ì´ìƒì¸ ì‚¬ëŒì¤‘ì— Së¡œ ì‹œì‘í•˜ëŠ” ì‚¬ëŒ ì¡°íšŒ
 select * from emp where sal>=2000 and ename like 'S%';

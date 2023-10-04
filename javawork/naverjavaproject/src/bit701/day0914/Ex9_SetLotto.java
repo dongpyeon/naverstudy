@@ -42,7 +42,7 @@ public class Ex9_SetLotto {
 		}catch (NumberFormatException e) {
 			System.out.println("금액은 숫자로만 입력해주세요:"+e.getMessage());
 		}
-	}
+	}r
 
 }
 
