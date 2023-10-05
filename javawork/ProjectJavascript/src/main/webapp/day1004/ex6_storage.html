@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
@@ -25,6 +30,7 @@
 	<buton type ="button" id="btn2" class="btn btn-success"> 삭제</buton>
 	<buton type ="button" id="btn3" class="btn btn-success"> 전체삭제</buton>
 	<buton type ="button" id="btn4" class="btn btn-success"> 내용보기</buton>
+	<buton type ="button" id="btn5" class="btn btn-success"> 사라지기</buton>
 	<br><br>
 	<div id="view"></div>
 	<script>
@@ -58,5 +64,9 @@
 			document.getElementById("view").innerHTML=s;
 		}
 	</script>
+	<p>우하하하하하</p>
+
+<p><input type="text" id="datepicker"></p>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
 </html>
