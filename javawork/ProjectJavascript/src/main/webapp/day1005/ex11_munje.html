@@ -31,17 +31,11 @@
 		});
 		// 문제3 : photo 라는 클래스로 스타일을 만든후(border 등 마음대로 추가)
 		// 사진에 마우스를 올리면 photo 적용, 벗어나면 photo제거(hover 이벤트를 이용해서 구현)  
-
-		$("img").hover(function(){
-			$(this).addClass("photo")
-		},function(){
-			$(this).removeClass("photo")
-		});
 		
 		$("img").hover(function(){
-			$(this).addClass("photo")
+			$(this).addClass("photo");
 		},function(){
-			$(this).removeClass("photo")
+			$(this).removeClass("photo");
 		});
 		
  	});
