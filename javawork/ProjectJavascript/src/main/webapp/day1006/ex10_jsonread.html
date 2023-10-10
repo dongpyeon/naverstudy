@@ -29,7 +29,6 @@
 	}
 	
 	.circle{
-		text-align: center;
 		width: 50px;
 		height: 50px;
 		border: 1px solid gray;
@@ -62,8 +61,9 @@ $(function(){
 			s+=`</div>`;
 			s+=`</td>`;
 			s+="</tr>";
-			
+
 	});
+	s+=`</table>`;
 	$(".show").append(s);
 });
 </script>	
