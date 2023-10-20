@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+	
+	.contain div{
+		width: 300px;
+		height: 300px;
+		float: left;
+		margin-right: 20px;
+	}
+	.text{
+		width: 500px;
+		height: 200px;
+		border: 5px solid orange;
+		border-radius: 10px;
+		margin: 80px 50px;
+		text-align: center;
+	}
+	table{
+		width: 300px;
+		height: 150px;
+	}
+	td:hover{
+		background-color: pink;
+		color: white;
+	}
+</style>
+<script>
+$(function(){
+	$("#two").hide();
+	$(".btn1").click(function(){
+		$("#two").toggle()
+	});
+});
+$(function(){
+	$(".btn2").click(function(){
+		let s=
+		`
+		<table class="tr1">
+				<tr>
+					<td>cgv 강남점</td>
+				</tr>
+				<tr>
+					<td>megabox강남점</td>
+				</tr>
+				<tr>
+					<td>cgv 교보타워점</td>
+				</tr>
+
+			</table>
+		`;
+		$("div#three").html(s);
+	});
+	
+		$(".btn3").click(function(){
+		let s=
+		`
+		<table class="tr2">
+				<tr>
+					<td>cgv 영화1</td>
+				</tr>
+				<tr>
+					<td>megabox영화2</td>
+				</tr>
+				<tr>
+					<td>cgv 영화3</td>
+				</tr>
+
+			</table>
+		`;
+		$("div#three").html(s);
+	});
+	
+	$(document).on("click",".tr1 td",function(){
+		let t = $(this).text();
+		$(".place").html(`극장명 : ${t}`);
+	});
+	$(document).on("click",".tr2 td",function(){
+		let t = $(this).text();
+		$(".movie").html(`영화제목 : ${t}`);
+	});
+});
+</script>	
+</head>
+<body>
+	<div class="contain">
+		<div id="one">
+			<button type="button" class="btn btn-outline-success btn1">영화 예매</button>
+		</div>
+		<div id="two">
+			<button type="button" class="btn btn-outline-danger btn2">극장 선택</button>
+			<button type="button" class="btn btn-outline-danger btn3">영화 선택</button>
+			<div id="three">
+			
+			</div>
+		</div>
+
+	</div>
+	<div class="text" style="clear: both;" >
+		<div class="place"></div>
+		<div class="movie"></div>
+	</div>
+</body>
+</html>
