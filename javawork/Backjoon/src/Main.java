@@ -1,6 +1,3 @@
-
-
-
 import java.util.Scanner;
 
 public class Main {
@@ -9,19 +6,13 @@ public class Main {
 		
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int arr[] = new int[9];
-		arr[0]=sc.nextInt();
-		int max = arr[0];
-		int min = arr[0];
-		for(int i=1; i<9; i++) {
-			arr[i] = sc.nextInt();			
-			if(min>arr[i])
-				min=arr[i];
-			if(max<arr[i])
-				max=arr[i];			
+		int num = Integer.parseInt(sc.nextLine());
+		for(int i =1; i<=num; i++)
+		{
+			String text = sc.nextLine();
+			System.out.println(text.substring(0, 1)+text.substring(text.length()-1, text.length()));
 		}
-		System.out.print(max+"\n"+min);
+		
 	}
 
 	}
-
