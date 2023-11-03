@@ -7,21 +7,13 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		String text = sc.nextLine();
-		if(text.length()==1){
-			return;
-		}
-		else {
-			String [] arr = text.split(" ");
-			int count = Integer.parseInt(arr[0]);
-			for(int i =0; i<arr[1].length(); i++) {
-				char a=arr[1].charAt(i);
-					for(int j=0; j<count; j++)
-					{
-						System.out.print(a);
-					}
-
-			}
-		}
+		text = text.trim();
+		String [] arr = text.split(" ");
+		
+		if(arr[0]=="")
+			System.out.println("0");
+		else
+			System.out.println(arr.length);
 	}	
 }
 
