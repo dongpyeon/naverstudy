@@ -6,13 +6,22 @@ public class Main {
 		
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int num = Integer.parseInt(sc.nextLine());
-		for(int i =1; i<=num; i++)
-		{
-			String text = sc.nextLine();
-			System.out.println(text.substring(0, 1)+text.substring(text.length()-1, text.length()));
+		String text = sc.nextLine();
+		if(text.length()==1){
+			return;
 		}
-		
-	}
+		else {
+			String [] arr = text.split(" ");
+			int count = Integer.parseInt(arr[0]);
+			for(int i =0; i<arr[1].length(); i++) {
+				char a=arr[1].charAt(i);
+					for(int j=0; j<count; j++)
+					{
+						System.out.print(a);
+					}
 
-	}
+			}
+		}
+	}	
+}
+
