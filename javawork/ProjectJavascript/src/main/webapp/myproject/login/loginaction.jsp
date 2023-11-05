@@ -20,13 +20,13 @@
 	//비번이 1234면 각종 정보를 세션에 저장한다
 	if(check){
 		//세션에 저장
-		session.setAttribute("loginok", "yes");
+		session.setAttribute("loginok", id);
 		session.setAttribute("loginid", id);
 		session.setAttribute("savestatus", saveid==null?"no":"yes");
 		//유지 시간 지정
 		session.setMaxInactiveInterval(60*60);
 		//메인 페이지로 이동
-		response.sendRedirect("loginmain.jsp");
+		response.sendRedirect("main.jsp");
 	}else{%>
 		<script type="text/javascript">
 			alert("아이디 또는 비밀번호가 일치하지 않습니다");

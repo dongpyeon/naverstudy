@@ -41,6 +41,15 @@
 	//날짜 출력 양식
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 	
+	String loginok=(String)session.getAttribute("loginok");	
+	
+	if(loginok==null){%>
+		<script>
+		alert("회원만 열람 가능합니다");
+		</script>
+		<%response.sendRedirect("../login/main.jsp");
+		}
+	
 %>
 <body>
  <div style="margin: 30px 50px">

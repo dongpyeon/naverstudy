@@ -55,10 +55,7 @@ public class BoardDao {
 		//		String sql="insert into board (writer,subject,content,photo,writeday)"
 		//				+ " values (?,?,?,?,now())";
 
-		String sql="""
-				insert into board (writer,subject,content,photo,writeday)
-				 values (?,?,?,?,now())
-				""";
+		String sql="insert into board (writer,subject,content,photo,writeday) values (?,?,?,?,now())";
 
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;

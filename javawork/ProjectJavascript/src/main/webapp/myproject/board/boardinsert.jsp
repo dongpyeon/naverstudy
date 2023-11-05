@@ -11,6 +11,7 @@
 	System.out.println("path="+realPath);
 	int uploadSize=1024*1024*5;//5mb
 	
+	
 	try{
 		multipartRequest=new MultipartRequest(request,realPath,uploadSize,"utf-8",
 				new DefaultFileRenamePolicy());
@@ -19,7 +20,7 @@
 		BoardDto dto=new BoardDto();
 		
 		//데이타 읽기(파일 포함)
-		String writer=multipartRequest.getParameter("writer");
+		String writer=multipartRequest.getParameter("id");
 		String subject=multipartRequest.getParameter("subject");
 		String content=multipartRequest.getParameter("content");
 		//업로드된 실제 파일명,업로드 안했을경우 null

@@ -17,10 +17,7 @@ public class UserDao {
 		//		String sql="insert into board (writer,subject,content,photo,writeday)"
 		//				+ " values (?,?,?,?,now())";
 
-		String sql="""
-				insert into user (id,passwd)
-				 values (?,?)
-				""";
+		String sql="insert into user (id,passwd) values (?,?)";
 
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
@@ -90,5 +87,32 @@ public class UserDao {
 		}
 		return check;
 	}
+	
+	public boolean checkId(UserDto dto)
+	{
+		boolean check = false;
+		String sql="select id from user where id=?";
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1,dto.getId());
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				check = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		return check;
+	}
+
 
 }

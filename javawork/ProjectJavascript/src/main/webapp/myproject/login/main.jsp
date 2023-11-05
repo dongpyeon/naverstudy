@@ -25,13 +25,16 @@
 	if(loginok==null){%>
 		<jsp:include page="loginform.jsp"/>
 		<br><br>
-		<h3><b>쇼핑몰 정보를 확인하려면 먼저 로그인을 해주세요</b></h3>
-	<%}else{%>
+		<h3><b>게시글을 확인하려면 먼저 로그인을 해주세요</b></h3>
+	<%}else{
+		response.sendRedirect("../board/list.jsp");	%>
 		<jsp:include page="logoutform.jsp"/>
 		<br><br>
 		<img src="mainpage.png">
+		
 	<%}
 	%>
+	<button type="button" onclick="location.href='signupform.jsp'">회원가입</button>
 </div>
 </body>
 </html>
