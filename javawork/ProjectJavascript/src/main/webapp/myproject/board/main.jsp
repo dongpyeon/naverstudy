@@ -16,20 +16,26 @@
 </style>
 </head>
 <%
-	//로그인 상태인지 세션값을 얻는다
-	String loginok=(String)session.getAttribute("loginok");
+	String loginok=(String)session.getAttribute("loginok");//업을 경우 null
 %>
 <body>
-<div style="margin: 50px;">
 	<%
 	if(loginok==null){%>
-		<jsp:include page="loginform.jsp"/>
+		<div class="input-group" style="width:400px; float: right;">
+		<button type="button" class="btn btn-success"
+		style="width: 100px;"
+		onclick="location.href='../login/loginform.jsp'">로그인</button>
+		</div>
+		
 	<%}else{%>
-		<jsp:include page="logoutform.jsp"/>
-		<br><br>
-		<img src="mainpage.png">
+		<div class="input-group" style="width:400px; float: right;">
+		<%=loginok %>님 환영합니다 <button type="button" class="btn btn-danger"
+		style="width: 100px;"
+		onclick="location.href='../login/logoutaction.jsp'">로그아웃</button>
+		</div>
+		
 	<%}
 	%>
-</div>
+<jsp:include page="list.jsp"/>
 </body>
 </html>

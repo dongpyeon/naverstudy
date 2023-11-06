@@ -58,6 +58,20 @@
 	BoardDao dao=new BoardDao();
 	//dto	
 	BoardDto dto=dao.getData(num);	
+	
+	String writer = request.getParameter("writer");
+	String loginid=(String)session.getAttribute("loginid");
+	
+	if(!loginid.equals(writer))
+		{%>
+		<script type="text/javascript">
+		alert("게시글 작성자만 수정할 수 있습니다.");
+		history.back()
+		</script>
+		
+		<%
+	}
+	
 %>
 <body>
 <!-- 이미지 출력할곳 -->
@@ -76,9 +90,9 @@
 			<tr>
 				<th width="100">작성자</th>
 				<td>
-					<input type="text" name="writer" class="form-control"
-					style="width: 150px" autofocus="autofocus" required="required"
-					value="<%=dto.getWriter()%>">
+					<select name="writer" style="width: 150px" autofocus="autofocus" required="required">
+					<option><%=loginid %></option>
+					</select>
 				</td>
 			</tr>
 			<tr>

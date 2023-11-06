@@ -39,7 +39,7 @@
 		dao.insertBoard(dto);
 		
 		//list.jsp 로 이동
-		response.sendRedirect("list.jsp");
+		response.sendRedirect("main.jsp");
 	}catch(Exception e){
 		out.print("<h3>파일 업로드 오류 발생:"+e.getMessage()+"</h3>");
 	}

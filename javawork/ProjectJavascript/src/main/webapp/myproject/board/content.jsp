@@ -43,12 +43,13 @@
 	
 	String loginok=(String)session.getAttribute("loginok");	
 	
-	if(loginok==null){%>
-		<script>
-		alert("회원만 열람 가능합니다");
+	if(loginok==null)
+	{%>
+		<script type="text/javascript">
+		alert("로그인 후 이용 가능합니다.");
+		history.back();
 		</script>
-		<%response.sendRedirect("../login/main.jsp");
-		}
+	<%}
 	
 %>
 <body>
@@ -87,16 +88,28 @@
  				style="width: 100px;" onclick="location.href='boardform.jsp'">글쓰기</button>
  				
  				<button type="button" class="btn btn-outline-success"
- 				style="width: 100px;" onclick="location.href='list.jsp'">목록</button>
+ 				style="width: 100px;" onclick="location.href='main.jsp'">목록</button>
  				
- 				<button type="button" class="btn btn-outline-success"
- 				style="width: 100px;" onclick="location.href='updateform.jsp?num=<%=dto.getNum()%>'">수정</button>
+ 				<form name="change" style=" float:left;" action="./updateform.jsp?num=<%=dto.getNum()%>">
+	    			<input type="hidden" name="writer" value="<%=dto.getWriter()%>" >
+	    			<input type="hidden" name="num" value="<%=dto.getNum()%>" >
+	    
+	    			<input type="submit" class="btn btn-outline-warning" value="수정" style="width: 100px"; >
+				</form>
  				
- 				<button type="button" class="btn btn-outline-success"
- 				style="width: 100px;" onclick="location.href='boarddelete.jsp?num=<%=dto.getNum()%>'">삭제</button>
+ 				<form name="del" style=" float:left;" action="./boarddelete.jsp?num=<%=dto.getNum()%>">
+	    			<input type="hidden" name="writer" value="<%=dto.getWriter()%>" >
+	    			<input type="hidden" name="num" value="<%=dto.getNum()%>" >
+	    			<input type="submit" class="btn btn-outline-danger" value="삭제" style="width: 100px"; >
+				</form>
  			</td>
  		</tr>
  	</table>
  </div>
+
+ <div>
+
+</div>
+
 </body>
 </html>

@@ -26,7 +26,7 @@
 		//유지 시간 지정
 		session.setMaxInactiveInterval(60*60);
 		//메인 페이지로 이동
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("loginmain.jsp");
 	}else{%>
 		<script type="text/javascript">
 			alert("아이디 또는 비밀번호가 일치하지 않습니다");

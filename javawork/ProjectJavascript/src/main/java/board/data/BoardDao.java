@@ -48,6 +48,42 @@ public class BoardDao {
 
 		return list;
 	}
+	
+	//조회수
+		public List<BoardDto> getreadcount()
+		{
+			List<BoardDto> list=new Vector<BoardDto>();
+			String sql="select * from board order by readcount desc";
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+
+			try {
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				while(rs.next())
+				{
+					BoardDto dto=new BoardDto();
+					dto.setNum(rs.getString("num"));
+					dto.setWriter(rs.getString("writer"));
+					dto.setContent(rs.getString("content"));
+					dto.setSubject(rs.getString("subject"));
+					dto.setPhoto(rs.getString("photo"));
+					dto.setReadcount(rs.getInt("readcount"));
+					dto.setWriteday(rs.getTimestamp("writeday"));
+
+					//list 에 추가
+					list.add(dto);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(rs, pstmt, conn);
+			}
+
+			return list;
+		}
 
 	//insert
 	public void insertBoard(BoardDto dto)
@@ -115,7 +151,7 @@ public class BoardDao {
 	//조회수 증가
 	public void updateReadcount(String num)
 	{
-		String sql="update user set readcount=readcount+1 where num=?";
+		String sql="update board set readcount=readcount+1 where num=?";
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 

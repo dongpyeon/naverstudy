@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<%request.setCharacterEncoding("utf-8"); %>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -15,44 +16,37 @@
     }
 </style>
 </head>
-<%
-	String savestatus=(String)session.getAttribute("savestatus");//업을 경우 null
-	String loginid=(String)session.getAttribute("loginid");//업을 경우 null
-	boolean bCheck=false;
-	if(savestatus==null || savestatus.equals("no")){
-		bCheck=false;
-	}else{
-		bCheck=true;
-	}
-	
-	//체크를 안했을 경우는 아이디를 없앤다
-	if(!bCheck) loginid="";
-%>
 <body>
-<div style="margin: 30px 100px;">
+<div>
 	<form action="signupaction.jsp" method="post">
-		<table class="table table-bordered" style="width: 200px; border:5px groove gray; ">
-			<caption align="top">
-				<label><input type="checkbox" name="saveid"
-				<%=bCheck?"checked":""%>>아이디저장</label>
-				
-			</caption>
-			<tr>
-				<td width="150">
-					<input type="text" name="id" class="form-control" autofocus required 
-					placeholder="아이디" value="<%=loginid%>">
-				</td>
-				<td rowspan="2" width="100">
-					<button type="submit" style="width: 100%; height: 100px;">회원가입</button>		
-				</td>
-			</tr>
-			<tr>
-			<td width="150">
-				<input type="password" class="form-control" required
-				placeholder ="비밀번호"	 name="passwd">
-				</td>
-			</tr>
-		</table>
+		<section class="vh-100" style="background-color: #ff5050;">
+		  <div class="container py-5 h-100">
+		    <div class="row d-flex justify-content-center align-items-center h-100">
+		      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+		        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+		          <div class="card-body p-5 text-center">
+		            <h3 class="mb-5">회원가입</h3>
+		            <div class="form-outline mb-4">
+		              <input type="text" name="id" id="typeEmailX-2" name="id" autofocus required 
+							placeholder="아이디"
+		              class="form-control form-control-lg" />
+		              <label class="form-label" for="typeEmailX-2">ID</label>
+		            </div>
+		
+		            <div class="form-outline mb-4">
+		              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" 
+		              required	placeholder ="비밀번호"	 name="passwd"/>
+		              <label class="form-label" for="typePasswordX-2">Password</label>
+		            </div>
+		            <button class="btn btn-primary btn-lg btn-block" type="submit">회원가입</button>
+		
+		            <hr class="my-4">
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</section>
 	</form>
 </div>
 </body>

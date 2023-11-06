@@ -10,8 +10,16 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <%
-String id=(String)session.getAttribute("loginid");
+String id=(String)session.getAttribute("loginok");
+if(id==null)
+{%>
+	<script type="text/javascript">
+	alert("로그인 후 이용 가능합니다.");
+	history.back();
+	</script>
+<%}
 %>
+
 <style>
     body * {
         font-family: 'Jua';
@@ -63,9 +71,9 @@ String id=(String)session.getAttribute("loginid");
 			<tr>
 				<th width="100">작성자</th>
 				<td>
-					<div name="<%=id %>" style="width: 150px" autofocus="autofocus" required="required">
-					<%=id %>
-					</div>
+					<select name="id" style="width: 150px" autofocus="autofocus" required="required">
+					<option><%=id %></option>
+					</select>
 				</td>
 			</tr>
 			<tr>
