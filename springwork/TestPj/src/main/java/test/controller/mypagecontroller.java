@@ -13,6 +13,14 @@ public class mypagecontroller {
 	public String mypage(Model model, TestmemberDto dto) {
 		String username = dto.getName();
 		
+		
+		TestmemberDto member =
+		
 		return "mypage/mypageform";
+		
+		
+		
+		
+		
 	}
 }

@@ -57,7 +57,8 @@
 		<li><a href="${root }/member/form">회원가입</a></li>
 		<li><a href="${root }/member/list">회원명단</a></li>
 		<li><a href="${root }/board/list">게시판</a></li>
-		<li><a href="${root }/guest/list">헬스장</a></li>
+		<li><a href="${root }/guest/list">방명록</a></li>
+		<li><a href="${root }/face">굴얼인식</a></li>
 		<li><a href="${root }/map">오시는 길</a></li>
 	</ul>
 

@@ -19,6 +19,9 @@
 </head>
 <body>
 <h2>환영합니당 ${name }님 마이페이지 입니다,</h2>
-
+<c:if test="${type}">
+<h3>하이!</h3>
+<h2>ㅇㄴ마아님</h2>
+</c:if>
 </body>
 </html>
