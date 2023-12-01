@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-<form action="/login/signup" method="post" >
+<form action="./login/signup" method="post" >
 	<input type="text" name="name">이름<br>
 	<input type="text" name="id">아이디<br>
 	<input type="password" name="pass">비밀번호<br>

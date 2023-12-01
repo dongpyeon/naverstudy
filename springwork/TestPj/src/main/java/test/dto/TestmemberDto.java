@@ -9,7 +9,9 @@ public class TestmemberDto {
 	private String id;
 	private String pass;
 	private String email;
+	private String photo;
 	private String type;
+	private String hashpass;
 	
 	
 }

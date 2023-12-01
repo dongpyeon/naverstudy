@@ -19,6 +19,13 @@
 </head>
 <body>
 	<h5 class="alert alert-success">사진에서 얼굴 인식하기</h5>
-
+	<h6>얼굴이 많이 포함된 사진으로 업로드해주세요</h6>
+	<input type="file" id="upload">
+	<br>
+	<div class="jdata" style="width: 400px;">Json 결과 출력</div>
+	<hr>
+	<h6>원본 이미지</h6>
+	<img src="" id="facephoto" style="max-width: 400px;">
+	<div id="photoinfo" style="margin-left: 5px; width: 300px;">결과출력</div>
 </body>
 </html>

@@ -18,12 +18,11 @@
 </style>
 </head>
 <body>
-<form action="/login/signup" method="post" >
-	<input type="text" name="name">이름<br>
+<form action="login/check" method="post" >
 	<input type="text" name="id">아이디<br>
-	<input type="password" name="pass">비밀번호<br>
-	<input type="email" name="email">이메일<br>
-	<input type="submit" value="회원가입"> 
+	<input type="text" name="pass">패스워드<br>
+	<input type="submit" value="로그인"> 
+	<a href="./login/findpass">비밀번호 찾기</a>
 </form>
 
 </body>

@@ -11,8 +11,5 @@ public class TestmemberService {
 	@Autowired
 	private TestmemberDao testmemberdao;
 	
-	public TestmemberDto getMemberByUsername(String username)
-	{
-		
-	}
+	
 }

@@ -24,4 +24,10 @@ public class TestController {
 	public String board() {
 		return "/board/boardlist";
 	}
+	
+	@GetMapping("/a/b/c/d/e/f/g")
+	public String board2() {
+		return "/screen/main2";
+	}
+	
 }

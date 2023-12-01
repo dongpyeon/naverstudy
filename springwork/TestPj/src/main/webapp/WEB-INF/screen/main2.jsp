@@ -18,13 +18,6 @@
 </style>
 </head>
 <body>
-<form action="/login/signup" method="post" >
-	<input type="text" name="name">이름<br>
-	<input type="text" name="id">아이디<br>
-	<input type="password" name="pass">비밀번호<br>
-	<input type="email" name="email">이메일<br>
-	<input type="submit" value="회원가입"> 
-</form>
-
+<a href="/test">어디 링크로 갈까요</a>
 </body>
 </html>
