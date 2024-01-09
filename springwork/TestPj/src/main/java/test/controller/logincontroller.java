@@ -7,15 +7,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import lombok.AllArgsConstructor;
 import test.dao.TestmemberDao;
 import test.dto.TestmemberDto;
 import test.service.HashService;
@@ -33,10 +29,10 @@ public class logincontroller {
 	}
 	
 	@PostMapping("/login/signup")
-	public String signin(@ModelAttribute TestmemberDto dto)
+	public String signup(@ModelAttribute TestmemberDto dto)
 	{
 		 // 비밀번호 해싱 적용
-        HashService.hashAndSetPassword(dto, dto.getPass());
+		HashService.hashAndSetPassword(dto, dto.getPass());
 
         dao.insertMember(dto);
 		
@@ -53,7 +49,7 @@ public class logincontroller {
 	{
 		Map<String, Object> map=new HashMap<String, Object>();
 		// 비밀번호 해싱 적용
-        pass = HashService.hashPassword(pass);
+		pass = HashService.hashPassword(pass);
         
 		boolean bLogin=dao.isLoginCheck(id, pass);
 		if(bLogin)
