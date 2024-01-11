@@ -17,18 +17,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "mycar")
+@Table(name = "mycar") //그니까 이걸 쓰면 이 이름의 테이블이 만들어 지는 거지.
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class MyCarDto {
 	
-	@Id //각 엔터티를 구별할 수 있도록 식별 아이디를 갖도록 설계
+	@Id //각 엔터티를 구별할 수 있도록 식별 아이디를 갖도록 설계 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//auto increment를 주기 위한거래여
 	private Long num;
 	
-	@Column(name = "car_name",length = 30)
+	@Column(name = "carname",length = 30) //컬럼명은 변수명과 같을경우 생략가능
 	private String carname;
 	
 	private int carprice;
