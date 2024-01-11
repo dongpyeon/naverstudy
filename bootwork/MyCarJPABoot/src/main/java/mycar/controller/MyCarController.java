@@ -72,7 +72,7 @@ public class MyCarController {
 		
 		model.addAttribute("totalCount", result.getTotalElements());
 		model.addAttribute("totalPage", result.getTotalPages());
-		model.addAttribute("list", result.getContent());
+		model.addAttribute("list", list);
 		model.addAttribute("pageSize", pageSize);
 		
 		return "mycar/mycarlist";

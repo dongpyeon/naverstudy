@@ -40,9 +40,9 @@
             <td>
                <a th:href="@{/detail(num=${dto.num})}" style="color: black; cursor: pointer; text-decoration: none;">
                   <!-- 타임리프로 썸네일 사진 넣기 -->
-                  <img th:src="@{https://o8pdrovm2109.edge.naverncp.com/OkHqFOUkAL/bootmyshop/{photo}?type=f&w=40&h=40&faceopt=true&ttype=jpg(photo=${dto.carphoto})}" border="1" hspace="10">
-                  [[${dto.carname}]]
-                  
+                 <img th:src="@{https://aalabhjv2104.edge.naverncp.com/0c4bJ0WMOm/bootmyshop/{photo}?type=f&w=40&h=40&ttype=jpg(photo=${dto.carphoto})}"
+				  border="1" hspace="10">
+				  [[${dto.carname}]]
                   <!-- 댓글 개수 -->
                   <span th:if="${dto.commentcount > 0}" style="margin-left: 10px; color: red;">([[${dto.commentcount}]])</span>
                </a>
@@ -51,7 +51,7 @@
                <div class="box" th:style="'background-color: ' + ${dto.carcolor} + ';'"></div>
             </td>
             <td align="right">
-               <span th:text="${#numbers.formatInteger(dto.carprice, 0, 'COMMA')}"></span>
+               <span th:text="${#numbers.formatInteger(dto.carprice, 0, 'COMMA')}"></span>원
             </td>
             <td style="text-align: center">
                [[${dto.carguip}]]
