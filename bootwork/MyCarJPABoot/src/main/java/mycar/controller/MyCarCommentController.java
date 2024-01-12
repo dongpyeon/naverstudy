@@ -27,6 +27,9 @@ public class MyCarCommentController {
 				.comment(comment)
 				.mycar(dto)
 				.build();
+		
+		
+		
 		//db insert
 		commentDao.inertComment(commentDto);
 	}
