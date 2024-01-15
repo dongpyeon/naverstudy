@@ -5,6 +5,9 @@ import Twoapp from './TwoApp';
 import ThreeApp from './ThreeApp';
 import FourApp from './FourApp';
 import FiveApp from './FiveAppp';
+import SixApp from './SixApp';
+import SevenApp from './SevenApp';
+import EightApp from './EightApp';
 
 function MainApp(props) {
     const [comp,setComp]=useState(5); //컴포넌트 번호 5번이라는 뜻
@@ -31,7 +34,10 @@ function MainApp(props) {
                 comp==2?<Twoapp/>: 
                 comp==3? <ThreeApp/>: 
                 comp==4? <FourApp/>: 
-                <FiveApp/>
+                comp==5? <FiveApp/>: 
+                comp==6? <SixApp/>: 
+                comp==7? <SevenApp/>: 
+                <EightApp/>
             }
         </div>
     );
