@@ -29,8 +29,6 @@ function SevenApp(props) {
                                 onClick={()=>{
                                 setArray(array.filter((a,idx)=>(i!==idx)))
                             }}>Delete</button>
-
-
                             </td>
                         </tr>
                     ))
