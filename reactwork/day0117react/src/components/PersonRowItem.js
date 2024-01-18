@@ -3,6 +3,7 @@ import React from 'react';
 
 const PersonRowItem = (props) => {
     const {row,idx,onDelete}=props;
+
     return (
         <tr>
             <td style={{width:'250px'}}>
