@@ -2,6 +2,7 @@ package person.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import person.data.PersonDao;
 import person.data.PersonDto;
 
+@CrossOrigin //이거는 리액트에서 3000번대 같이 주소가 다른데 불러올때 사용하는데 안될땐 이거 써라 
 @RestController //responsbody 인가 안써도 됨 머 리액트랑연동하면 다 비동기라 그런가?
 @RequiredArgsConstructor
 public class PersonController {
@@ -42,4 +44,21 @@ public class PersonController {
 		System.out.println("delete>>"+pnum);
 		personDao.deletePerson(pnum);
 	}
+	
+	//dto 반환
+	@GetMapping("/person/select")
+	public PersonDto select(@RequestParam("pnum") int pnum)
+	{
+		System.out.println("select>>"+pnum);
+		return personDao.getSelectData(pnum);
+	}
+	
+	//수정
+	@PostMapping("/person/update")
+	public void update(@RequestBody PersonDto dto)
+	{
+		System.out.println("update>>"+dto);
+		personDao.updatePerson(dto);
+	}
+
 }

@@ -10,6 +10,7 @@ const OneApp = () => {
     //저장 이벤트
     const personInsert=(data)=>{
         console.log(data);
+        
         //스프링부트 서버로 데이타 보내서 db 저장
         axios.post("/person/add",data)
         .then((res)=>{

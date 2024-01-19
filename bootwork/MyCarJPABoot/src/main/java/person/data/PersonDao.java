@@ -23,8 +23,21 @@ public class PersonDao {
 		return personRepository.findAll();	
 	}
 	
+	//삭제
 	public void deletePerson(int pnum)
 	{
 		personRepository.deleteById(pnum);
+	}
+	
+	public PersonDto getSelectData(int pnum)
+	{
+		return personRepository.getReferenceById(pnum);
+	}
+	
+	public void updatePerson(PersonDto dto)
+	{
+		//dto에 pnum이 포함되어야 수정이 됨
+		//없을 경우 추가가 됨
+		personRepository.save(dto);
 	}
 }
