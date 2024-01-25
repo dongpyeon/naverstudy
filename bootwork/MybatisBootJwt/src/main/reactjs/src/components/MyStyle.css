@@ -26,3 +26,8 @@ ul.menu li a{
 ul.menu li a:hover{
     color: palevioletred;
 }
+
+.pagenum{
+    text-decoration: none;
+    margin-right: 5px;
+}

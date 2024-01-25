@@ -57,7 +57,6 @@ public class LoginController {
 			}else {
 				//비번이 틀린 경우
 				map.put("result", "nopass");
-				
 			}
 			
 			
